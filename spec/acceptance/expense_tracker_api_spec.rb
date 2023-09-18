@@ -1,14 +1,11 @@
 # It should faithfully save the expenses we record
 require_relative '../../app/api.rb'
-require 'rack/test'
 require 'json'
 
 module ExpenseTracker
   RSpec.describe 'Expense Tracker API' do
-    include Rack::Test::Methods
-
     def app
-      ExpenseTracker::API.new
+      ExpenseTracker::API
     end
 
     def post_expense(expense)
